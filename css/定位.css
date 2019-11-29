@@ -1,0 +1,38 @@
+/* 定位实现三栏布局 */
+
+/* 缺点  父级元素的高度不是里面元素的最高高区
+   这样显示效果不太好  pass掉 */
+* {
+    margin : 0;
+    padding: 0;
+}
+
+.wrapper {
+    position        : relative;
+    padding         : 0 200px 0 200px;
+    background-color: gray;
+}
+
+.content {
+    width           : 100%;
+    height          : 600px;
+    background-color: blanchedalmond;
+}
+
+.left {
+    left            : 0;
+    top             : 0;
+    position        : absolute;
+    width           : 200px;
+    height          : 900px;
+    background-color: blueviolet;
+}
+
+.right {
+    right           : 0;
+    top             : 0;
+    position        : absolute;
+    width           : 200px;
+    height          : 400px;
+    background-color: rgb(226, 43, 58);
+}

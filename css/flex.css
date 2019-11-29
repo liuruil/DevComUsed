@@ -1,0 +1,32 @@
+/* flex布局 */
+/* 不错不错 */
+* {
+    margin : 0;
+    padding: 0;
+}
+
+.wrapper {
+    background-color: tomato;
+    display         : flex;
+}
+
+.content {
+    height          : 600px;
+    order           : 2;
+    flex            : 1;
+    background-color: chartreuse;
+}
+
+.left {
+    order           : 1;
+    width           : 200px;
+    height          : 200px;
+    background-color: red;
+}
+
+.right {
+    order           : 3;
+    width           : 200px;
+    height          : 200px;
+    background-color: yellow;
+}

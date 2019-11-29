@@ -1,0 +1,37 @@
+* {
+    margin : 0;
+    padding: 0;
+}
+
+.main,
+.left,
+.right {
+    float: left;
+}
+
+.main {
+    width : 100%;
+    height: 400px;
+}
+
+.main .main-inner {
+    height          : 500px;
+    background-color: violet;
+    margin-left     : 200px;
+    margin-right    : 200px;
+}
+
+.left {
+
+    margin-left     : -100%;
+    width           : 200px;
+    height          : 200px;
+    background-color: saddlebrown;
+}
+
+.right {
+    margin-left     : -200px;
+    width           : 200px;
+    height          : 600px;
+    background-color: yellow;
+}
