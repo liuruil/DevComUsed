@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3D旋转</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wra {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(#29f9f0 0%, #000 80%);
+        }
+
+
+
+        .wrapper {
+            transform: rotateY(45deg);
+            color: crimson;
+            width: 200px;
+            height: 220px;
+            transform-style: preserve-3d;
+            perspective: 8000px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto auto;
+
+            animation: xuanzhuan 6s linear infinite;
+
+        }
+
+        .wrapper:hover .out.qian {
+            transform: translate3d(-50%, -50%, 200px);
+        }
+
+        .wrapper:hover .out.hou {
+            transform: translate3d(-50%, -50%, -200px) rotateY(180deg);
+        }
+
+        /* .wrapper div.out{
+            width: ;
+        } */
+
+        .wrapper div.in {
+            border-radius: 20px;
+            background-color: #ffe7f9;
+
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            left: 50%;
+            top: 50%;
+            border: 5px solid #424242;
+            box-sizing: border-box;
+        }
+
+        .wrapper div.out {
+            transition: transform .5s ;
+            font-size: 35px;
+            color: #ff92ff;
+            line-height: 200px;
+            text-align: center;
+            border-radius: 20px;
+            background-color: rgba(51, 51, 51, .3);
+            border: 10px solid #66daff;
+            box-sizing: border-box;
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            left: 50%;
+            top: 50%;
+
+            box-sizing: border-box;
+        }
+
+        .wrapper .qian {
+
+            transform: translate3d(-50%, -50%, 50px);
+        }
+
+        .wrapper .out.qian {
+
+            transform: translate3d(-50%, -50%, 100px);
+        }
+
+        .wrapper div.qian span {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            display: block;
+            border-radius: 50%;
+            left: 50%;
+            top: 50%;
+            margin-top: -15px;
+            margin-left: -15px;
+            background-color: #bb9aff;
+        }
+
+        .wrapper .hou {
+
+            transform: translate3d(-50%, -50%, -50px) rotateY(180deg);
+        }
+
+        .wrapper .out.hou {
+
+            transform: translate3d(-50%, -50%, -100px) rotateY(180deg);
+        }
+
+
+        .wrapper .in span {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            display: block;
+            border-radius: 50%;
+            background-color: #bb9aff;
+        }
+
+
+
+        .wrapper div.hou span {
+            width: 25px;
+            height: 25px;
+        }
+
+        .wrapper .hou span:nth-of-type(2) {
+            left: 48px;
+            top: 3px;
+
+        }
+
+        .wrapper .hou span:nth-of-type(3) {
+            left: 12px;
+            top: 33px;
+
+        }
+
+        .wrapper .hou span:nth-of-type(4) {
+            left: 48px;
+            top: 33px;
+
+        }
+
+        .wrapper .hou span:nth-of-type(5) {
+            left: 12px;
+            top: 63px;
+
+        }
+
+        .wrapper .hou span:nth-of-type(6) {
+            left: 48px;
+            top: 63px;
+
+        }
+
+        .wrapper .hou span:nth-of-type(1) {
+            left: 12px;
+            top: 3px;
+
+
+        }
+
+        .wrapper .left {
+
+            transform: translate3d(-100px, -50%, 0) rotateY(90deg);
+        }
+
+        .wrapper:hover .out.left {
+            transform: translate3d(-300px, -50%, 0) rotateY(90deg);
+        }
+
+        .wrapper .out.left {
+
+            transform: translate3d(-200px, -50%, 0) rotateY(90deg);
+        }
+
+        .wrapper .left span:nth-of-type(1) {
+            top: 14px;
+            left: 12px;
+
+        }
+
+        .wrapper .left span:nth-of-type(2) {
+            top: 14px;
+            left: 48px;
+
+        }
+
+        .wrapper .left span:nth-of-type(3) {
+            left: 12px;
+            top: 48px;
+
+        }
+
+        .wrapper .left span:nth-of-type(4) {
+            left: 48px;
+            top: 48px;
+
+        }
+
+        .wrapper .you {
+
+            transform: translate3d(0, -50%, 0) rotateY(90deg);
+        }
+
+        .wrapper:hover .out.you {
+
+            transform: translate3d(100px, -50%, 0) rotateY(90deg);
+        }
+
+        .wrapper .out.you {
+
+            transform: translate3d(0, -50%, 0) rotateY(90deg);
+        }
+
+        .wrapper .you span:nth-of-type(1) {
+            left: 29px;
+            top: 12px;
+
+        }
+
+        .wrapper .you span:nth-of-type(2) {
+            left: 29px;
+            top: 48px;
+
+        }
+
+
+
+
+        .wrapper .shang {
+
+
+            transform: translate3d(-50%, -100px, 0) rotateX(90deg);
+        }
+
+        .wrapper:hover .out.shang {
+
+
+            transform: translate3d(-50%, -300px, 0) rotateX(90deg);
+        }
+
+        .wrapper .out.shang {
+
+
+            transform: translate3d(-50%, -200px, 0) rotateX(90deg);
+        }
+
+        .wrapper .shang span:nth-of-type(1) {
+            left: 7px;
+            top: 1px;
+
+        }
+
+        .wrapper .shang span:nth-of-type(2) {
+            left: 28px;
+            top: 25px;
+
+        }
+
+        .wrapper .shang span:nth-of-type(3) {
+            left: 50px;
+            top: 50px;
+
+        }
+
+        .wrapper .xia {
+
+            transform: translate3d(-50%, 0, 0) rotateX(-90deg);
+        }
+
+        .wrapper .out.xia {
+
+            transform: translate3d(-50%, 0, 0) rotateX(-90deg);
+        }
+
+        .wrapper:hover .out.xia {
+
+            transform: translate3d(-50%, 100px, 0) rotateX(-90deg);
+        }
+
+        .wrapper div.xia span {
+            width: 25px;
+            height: 25px;
+
+
+        }
+
+        .wrapper div.xia span:nth-of-type(1) {
+            left: 11px;
+            top: 7px;
+
+
+        }
+
+        .wrapper div.xia span:nth-of-type(2) {
+            left: 50px;
+            top: 7px;
+
+        }
+
+        .wrapper div.xia span:nth-of-type(3) {
+            left: 30px;
+            top: 29px;
+
+        }
+
+        .wrapper div.xia span:nth-of-type(4) {
+            left: 11px;
+            top: 50px;
+
+        }
+
+        .wrapper div.xia span:nth-of-type(5) {
+            left: 51px;
+            top: 50px;
+        }
+
+
+        @keyframes xuanzhuan {
+            0% {
+                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+            }
+
+            100% {
+                transform: rotateX(360deg) rotateY(180deg) rotateZ(360deg);
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="wra">
+        <div class="wrapper">
+
+            <div class=" in qian"><span></span></div>
+            <div class=" in hou"><span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span></div>
+            <div class=" in left"><span></span>
+                <span></span>
+                <span></span>
+                <span></span></div>
+            <div class=" in you">
+                <span></span>
+
+
+                <span></span></div>
+            <div class=" in shang">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class=" in xia">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+
+
+
+            <div class=" out qian">前边</div>
+            <div class=" out hou">后边</div>
+            <div class=" out left">左边</div>
+            <div class=" out you">右边</div>
+            <div class=" out shang">
+                上边
+            </div>
+            <div class=" out xia">下边</div>
+
+
+
+
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>
