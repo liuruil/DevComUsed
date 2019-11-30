@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.clearfix {
+    content: "";
+    display: block;
+    clear  : both;
+}
+
+.main {
+    float           : left;
+    height          : 600px;
+    width           : 300px;
+    background-color: brown;
+}
+
+.right {
+    overflow        : hidden;
+    height          : 600px;
+    width           : calc(100% - 300px);
+    background-color: red;
+}

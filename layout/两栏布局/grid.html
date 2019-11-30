@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <script src=""></script>
+    <style>
+        section {
+            display : grid;
+            grid-template-columns: 200px 1fr;
+            grid-template-areas: "a b";
+        }
+
+        .left {
+            height: 600px;
+            background-color: aqua;
+            grid-area: a;
+        }
+
+        .main {
+            height: 400px;
+            background-color: blue;
+            grid-area: b
+        }
+    </style>
+</head>
+
+<body>
+
+    <section>
+        <div class="left">
+        </div>
+        <div class="main">
+        </div>
+    </section>
+</body>
+
+</html>

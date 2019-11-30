@@ -1,0 +1,56 @@
+* {
+    margin : 0;
+    padding: 0;
+}
+
+/* section {
+    position        : fixed;
+    width           : 100%;
+    height          : 100%;
+    background-color: rosybrown;
+}
+
+.main {
+    position        : absolute;
+    top             : 0;
+    left            : 20%;
+    overflow        : auto;
+    height          : 100%;
+    width           : 80%;
+    background-color: chartreuse;
+}
+
+.left {
+
+    height          : 100%;
+    overflow        : auto;
+    width           : 20%;
+    background-color: red;
+} */
+
+
+
+ /* 使用定位的时候必须给包裹元素加固定高度才可以不推荐这种方法 */
+
+
+ 
+section {
+    position        : relative;
+    background-color: yellow;
+}
+
+.main {
+
+    height          : 600px;
+    background-color: sienna;
+    width           : 300px;
+}
+
+.right {
+    right: 0;
+    top: 0;
+    position        : absolute;
+    height          : 400px;
+    background-color: red;
+    width           :calc(100% - 300px);
+}

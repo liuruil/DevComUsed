@@ -1,0 +1,26 @@
+* {
+    margin : 0;
+    padding: 0;
+}
+section{
+    font-size: 0;
+}
+
+/* 利用calc  加上inline-block */
+.main,
+.right {
+    background-color: yellow;
+    display         : inline-block;
+}
+
+.main {
+    width           : 300px;
+    height          : 500px;
+    background-color: teal;
+}
+
+.right {
+    width           : calc(100% - 300px);
+    height          : 500px;
+    background-color: red;
+}
