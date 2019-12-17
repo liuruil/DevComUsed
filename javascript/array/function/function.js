@@ -40,13 +40,13 @@ console.log(array)
 console.log('------------------')
 
 
-// 7:splice
+// 7:splice  **** 改变原数组 ****
 // 三个参数  删除的索引 ，删除几位 ，添加的元素
 var result = array.splice(0)
 console.log(result) //返回值为删除的元素
 console.log(array)  //改变原数组
 
-//8:连接数组  不改变原数组
+//8:连接数组  不改变原数组 concat
 const arr1 = [1, 2, 3]
 const arr2 = [3, 2, 1]
 const arr3 = [3, 2, 1, 8]
@@ -86,7 +86,7 @@ console.log(arr8.includes(1, 1))
 //13: indexOf 返回所找值的第一个索引 没有则为-1 
 console.log(arr8.indexOf(3))
 
-//14:join 连接数组的每一项
+//14:join 连接数组的每一项  //不改变原数组
 //默认是以',' 连接
 console.log(arr8.join('+'))
 
@@ -115,7 +115,7 @@ var arr10 = [1, 2, 3, 4, 5, 6]
 console.log(arr10.slice(2, 3))
 
 //20: toSting 将数组转化为字符串
-var arr11 = [1,2,3]
+var arr11 = [1, 2, 3]
 console.log(arr11.toString())
 console.log(arr11)
 

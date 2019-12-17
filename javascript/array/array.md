@@ -7,7 +7,6 @@
 >不改变原数组  concat  flat join  reduce slice toString
 
 
-
 >改变原数组· pop  push shift unshift sort reserve  splice copyWithin fill
 
 3:数组的重要方法

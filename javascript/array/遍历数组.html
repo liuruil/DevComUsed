@@ -11,7 +11,16 @@
 </head>
 
 <body>
-    <script src="../array/traversal.js"></script>
+    <!-- <script src="../array/traversal.js"></script> -->
+    <script>
+        var src = 'http://www.baodu.com?name=liurui&age=18&type=gay'
+        var result = new URLSearchParams(src.split('?')[1])
+        console.log(result.get('type'))
+
+
+
+
+    </script>
 </body>
 
 </html>
