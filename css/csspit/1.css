@@ -1,0 +1,24 @@
+* {
+    margin : 0;
+    padding: 0;
+}
+.wrapper{
+    height: 200px;
+    width: 1000px;
+    overflow: auto;-
+    /* overflow: scroll; */
+}
+p{
+    overflow: hidden;
+    height: 300px;
+}
+
+
+li {
+    margin-top      : 50px;
+    list-style      : none;
+    width           : 100px;
+    height          : 300px;
+    float           : left;
+    background-color: chocolate;
+}

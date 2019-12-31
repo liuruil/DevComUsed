@@ -8,24 +8,30 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="">
-    <script src="./lib/liurui.js"></script>
     <style>
-        div {
-            width: 300px;
-            height: 300px;
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
             position: absolute;
-            background-color: chartreuse;
-            left: 0;
+            left: 0px;
             top: 0;
-            transition: all 5s linear;
+            z-index: -1;
         }
     </style>
 </head>
 
-<body>
-
-    <div></div>
-
+<body> 
+    <button>执行动画</button>
+    <div class="div"></div>
+  
+   
 </body>
+<script src="./javascript/原生动画/animation.js"></script>
 
 </html>
